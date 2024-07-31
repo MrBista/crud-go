@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql_container
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: go_learn
+      MYSQL_USER: bisma
+      MYSQL_PASSWORD: 2308
+    ports:
+      - "3001:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
